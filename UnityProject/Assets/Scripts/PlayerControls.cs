@@ -11,6 +11,11 @@ public class PlayerControls : MonoBehaviour
         float moveDirection = Input.GetAxis("Mouse X");
         
         float moveAmount = moveDirection * moveSpeed * Time.deltaTime;
+
+        if (moveAmount < mouseDeadZone)
+        {
+            return;
+        }
         
         moveAmount = Mathf.Clamp(moveAmount, 0, maxSpeed);
         TimeManager.AddTime(moveAmount);

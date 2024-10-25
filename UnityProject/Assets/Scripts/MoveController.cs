@@ -12,6 +12,6 @@ public class MoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddForce(new Vector2(10f, 0), ForceMode2D.Force);
+        rb.AddForce(new Vector2(moveSpeed, 0), ForceMode2D.Force);
     }
 }
