@@ -1,0 +1,26 @@
+using System;
+
+public static class TimeManager
+{
+    public static double CurrentTime { private set; get; }
+
+    public static void ResetTime()
+    {
+        CurrentTime = 0;
+    }
+
+    public static void AddTime(double change)
+    {
+        double newTime = CurrentTime + change;
+        double fraction = newTime - Math.Truncate(newTime);
+        if(newTime < 0.0)
+        {
+            CurrentTime = 1 - fraction;
+        }
+        else
+        {
+            CurrentTime = fraction;
+        }
+    }
+
+}
