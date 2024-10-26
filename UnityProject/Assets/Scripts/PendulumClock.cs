@@ -17,6 +17,6 @@ public class PendulumClock : MonoBehaviour
     {
         double time = TimeManager.CurrentTime;
         double angle = -90 + 45 * Math.Sin(time * 2 * Math.PI * moveSpeed);
-        pendulum.localRotation = Quaternion.Euler((float)angle, 90, 0);
+        pendulum.localRotation = Quaternion.Euler((float)angle, 0, 0);
     }
 }
