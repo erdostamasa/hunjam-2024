@@ -207,10 +207,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7414337214243103609, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -5076636137146517153, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -3171223004228123373, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
     - target: {fileID: 919132149155446097, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
       propertyPath: m_Name
       value: shelf_1x1
       objectReference: {fileID: 0}
+    - target: {fileID: 5610089356070187967, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: 6633947738691741599, guid: c4c73f6b064b11f41b79da2fc60d2a24, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

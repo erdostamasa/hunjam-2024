@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3827541519977049001}
   m_Layer: 6
-  m_Name: Platform2x2
+  m_Name: Platform1x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,6 +191,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7664728788398519507, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -1806680513116206669, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -1461304994638716399, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -804731622281664130, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
+    - target: {fileID: -678588488315902003, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 122edbbf527e05543b28ae799be48aca, type: 2}
     - target: {fileID: 919132149155446097, guid: ca71a304334645f47a8928c9a5f1fdda, type: 3}
       propertyPath: m_Name
       value: shelf_2x1
