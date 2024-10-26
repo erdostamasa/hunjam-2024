@@ -420,14 +420,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4779306710017071550, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
-      propertyPath: maxSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4779306710017071550, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
-      propertyPath: moveSpeed
-      value: 0.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6576846911403409743, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
       propertyPath: m_Name
       value: LevelBase
