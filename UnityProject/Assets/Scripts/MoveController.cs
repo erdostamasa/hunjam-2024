@@ -8,11 +8,9 @@ public class MoveController : MonoBehaviour
     [SerializeField] private Transform groundRaycast2;
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float minTimeBetweenTurns = 0.5f;
 
-
-
-    [SerializeField]
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     [SerializeField]
     private float maxVerticalSpeed = 50f;
@@ -24,6 +22,8 @@ public class MoveController : MonoBehaviour
     private bool goingRight = true;
     private Rigidbody2D rb;
 
+    private float timeSinceLastTurn = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +31,8 @@ public class MoveController : MonoBehaviour
 
     void Update()
     {
+        timeSinceLastTurn += Time.deltaTime;
+
         animator.SetFloat("MoveSpeed", Math.Abs(rb.linearVelocity.x));
 
         if (goingRight)
@@ -65,7 +67,11 @@ public class MoveController : MonoBehaviour
 
     public void ChangeDirection()
     {
-        goingRight = !goingRight;
+        if (timeSinceLastTurn >= minTimeBetweenTurns)
+        {
+            timeSinceLastTurn = 0;
+            goingRight = !goingRight;
+        }
     }
 
     private void OnDrawGizmos()

@@ -7,9 +7,15 @@ public class MenuManager : MonoBehaviour
 
     public bool Paused;
 
+    public GameObject MainPanel;
+    public GameObject PausePanel;
+
     void Start()
     {
+        if (PausePanel != null)
+        {
             PausePanel.SetActive(false);
+        }
     }
 
     void Update()
@@ -41,8 +47,6 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public GameObject MainPanel;
-    public GameObject PausePanel;
 
     private static int currentLevelIndex;
 
@@ -64,7 +68,7 @@ public class MenuManager : MonoBehaviour
 
     public void InvokePausePanel()
     {
-        if(MainPanel.active == false)
+        if (MainPanel.active == false)
         {
             Paused = true;
             PausePanel.SetActive(true);
@@ -103,5 +107,4 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
 }
