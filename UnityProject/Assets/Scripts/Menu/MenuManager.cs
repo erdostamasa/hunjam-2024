@@ -9,12 +9,16 @@ public class MenuManager : MonoBehaviour
 
     public GameObject MainPanel;
     public GameObject PausePanel;
+    public GameObject CreditsPanel;
+
+    public GameObject ExitButton;
 
     void Start()
     {
-        if (PausePanel != null)
-        {
-            PausePanel.SetActive(false);
+        PausePanel.SetActive(false);
+
+        if (Application.platform != RuntimePlatform.WindowsPlayer) { 
+            ExitButton.SetActive(false);
         }
     }
 
@@ -48,6 +52,7 @@ public class MenuManager : MonoBehaviour
     }
 
 
+
     private static int currentLevelIndex;
 
     private void Awake()
@@ -68,7 +73,7 @@ public class MenuManager : MonoBehaviour
 
     public void InvokePausePanel()
     {
-        if (MainPanel.active == false)
+        if(MainPanel.active == false)
         {
             Paused = true;
             PausePanel.SetActive(true);
@@ -107,4 +112,18 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
+
+    public void InvokeCreditPanel()
+    {
+        if (MainPanel.active == true)
+        {
+            CreditsPanel.SetActive(true);
+        }
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+
 }
