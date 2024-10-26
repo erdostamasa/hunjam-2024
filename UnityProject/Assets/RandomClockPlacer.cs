@@ -6,7 +6,6 @@ public class RandomClockPlacer : MonoBehaviour
 
     [SerializeField] private List<GameObject> clockPrefabs;
 
-    [SerializeField] private float chanceToSpawn = 0.25f;
 
     [SerializeField] private float minSizeMultiplier = 0.9f;
 
@@ -14,11 +13,11 @@ public class RandomClockPlacer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Randomly spawn a clock
-        // if (Random.value > chanceToSpawn)
-        // {
-        //     return;
-        // }
+
+        if (Random.value > 0.1f)
+        {
+            return;
+        }
 
 
         //Select a random clock prefab
@@ -31,7 +30,6 @@ public class RandomClockPlacer : MonoBehaviour
         //Randomly scale the clock 
         float randomSizeMultiplier = Random.Range(minSizeMultiplier, 1f);
         clock.transform.localScale = new Vector3(clock.transform.localScale.x * randomSizeMultiplier, clock.transform.localScale.y * randomSizeMultiplier, clock.transform.localScale.z * randomSizeMultiplier);
-
 
     }
 

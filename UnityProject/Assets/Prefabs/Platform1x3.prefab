@@ -45,9 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockPrefabs:
-  - {fileID: 6501317233957302033, guid: 1db0d2259b95f9340bc91fdac5f13e1e, type: 3}
+  - {fileID: 6501317233957302033, guid: a12c2cff41ca7b24d96d277357da546f, type: 3}
   - {fileID: 963353915191480204, guid: 35aa35ab357894548a7f3b1a478db45f, type: 3}
   chanceToSpawn: 0.25
+  minSizeMultiplier: 0.9
 --- !u!1 &5106327747853182571
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,9 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockPrefabs:
-  - {fileID: 6501317233957302033, guid: 1db0d2259b95f9340bc91fdac5f13e1e, type: 3}
+  - {fileID: 6501317233957302033, guid: a12c2cff41ca7b24d96d277357da546f, type: 3}
   - {fileID: 963353915191480204, guid: 35aa35ab357894548a7f3b1a478db45f, type: 3}
   chanceToSpawn: 1
+  minSizeMultiplier: 0.9
 --- !u!1 &6637240351403221088
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,9 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clockPrefabs:
-  - {fileID: 6501317233957302033, guid: 1db0d2259b95f9340bc91fdac5f13e1e, type: 3}
+  - {fileID: 6501317233957302033, guid: a12c2cff41ca7b24d96d277357da546f, type: 3}
   - {fileID: 963353915191480204, guid: 35aa35ab357894548a7f3b1a478db45f, type: 3}
   chanceToSpawn: 1
+  minSizeMultiplier: 0.9
 --- !u!1 &8892866050210045619
 GameObject:
   m_ObjectHideFlags: 0
