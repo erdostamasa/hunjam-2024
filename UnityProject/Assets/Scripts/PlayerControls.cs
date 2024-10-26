@@ -9,7 +9,23 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
-        HandleTimeControls();
+        if (Input.GetMouseButton(0))
+        {
+            HandleTimeControls();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
         HandleRestart();
     }
 
