@@ -46,11 +46,13 @@ public class MoveController : MonoBehaviour
         }
 
         // Calculate the difference between the target speed and the current velocity
-        float velocityDifference = moveSpeed - Math.Abs(rb.linearVelocity.x);
+        // float velocityDifference = moveSpeed - Math.Abs(rb.linearVelocity.x);
 
-        // Apply force based on the difference to adjust towards the target speed
+        // // Apply force based on the difference to adjust towards the target speed
 
-        rb.AddForce(new Vector2(velocityDifference * velocityMatchSpeed * (goingRight ? 1 : -1), 0), ForceMode2D.Force);
+        // rb.AddForce(new Vector2(velocityDifference * velocityMatchSpeed * (goingRight ? 1 : -1), 0), ForceMode2D.Force);
+
+        rb.linearVelocity = new Vector2(moveSpeed * (goingRight ? 1 : -1), rb.linearVelocity.y);
     }
 
     public void ChangeDirection()
