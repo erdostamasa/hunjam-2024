@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -7,6 +8,12 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float mouseDeadZone = 0f;
 
     void Update()
+    {
+        HandleTimeControls();
+        HandleRestart();
+    }
+
+    private void HandleTimeControls()
     {
         float moveDirection = Input.GetAxis("Mouse X");
 
@@ -19,5 +26,14 @@ public class PlayerControls : MonoBehaviour
 
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
         TimeManager.AddTime(moveAmount);
+    }
+
+    private void HandleRestart()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            TimeManager.ResetTime();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
