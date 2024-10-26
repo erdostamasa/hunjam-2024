@@ -14,7 +14,7 @@ public static class TimeManager
     {
         double newTime = CurrentTime + change;
         double fraction = newTime - Math.Truncate(newTime);
-        if(newTime < 0.0)
+        if (newTime < 0.0)
         {
             CurrentTime = 1 - fraction;
         }
@@ -22,8 +22,8 @@ public static class TimeManager
         {
             CurrentTime = fraction;
         }
-        
-        Debug.Log($"CurrentTime: {CurrentTime}");
+
+        // Debug.Log($"CurrentTime: {CurrentTime}");
     }
 
 }
