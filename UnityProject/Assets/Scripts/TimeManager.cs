@@ -7,7 +7,7 @@ public static class TimeManager
 
     public static void ResetTime()
     {
-        CurrentTime = 0;
+        CurrentTime = 0.5;
     }
 
     public static void AddTime(double change)
