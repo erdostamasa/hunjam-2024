@@ -232,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   groundRaycast: {fileID: 6106458615553052827}
-  groundCheckDistance: 0.2
+  groundCheckDistance: 0.25
   groundMask:
     serializedVersion: 2
     m_Bits: 64
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9099263927684070704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54720d132d682224a845a6b22e99bdd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a2a680601f017d46a1ed40f9a16b5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rayDistance: 1
