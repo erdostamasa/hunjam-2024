@@ -4,7 +4,8 @@ public class CharacterRayCast : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 1.0f;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private Transform rayOrigin;
+    [SerializeField] private Transform rayOriginUp;
+    [SerializeField] private Transform rayOriginDown;
 
     private MoveController moveController;
 
@@ -17,30 +18,40 @@ public class CharacterRayCast : MonoBehaviour
 
     void FixedUpdate()
     {
-        var leftHit = Physics2D.Raycast(rayOrigin.position, Vector3.left, rayDistance, layerMask);
-        var rightHit = Physics2D.Raycast(rayOrigin.position, Vector3.right, rayDistance, layerMask);
+        var leftHitUp = Physics2D.Raycast(rayOriginUp.position, Vector3.left, rayDistance, layerMask);
+        var leftHitDown = Physics2D.Raycast(rayOriginDown.position, Vector3.left, rayDistance, layerMask);
 
+        var rightHitUp = Physics2D.Raycast(rayOriginUp.position, Vector3.right, rayDistance, layerMask);
+        var rightHitDown = Physics2D.Raycast(rayOriginDown.position, Vector3.right, rayDistance, layerMask);
 
-        if (leftHit.collider != null)
+        if (leftHitUp.collider != null)
         {
             Debug.Log("Hit something in left direction");
         }
-        if (rightHit.collider != null)
+        if (rightHitUp.collider != null)
         {
             Debug.Log("Hit something in right direction");
         }
 
-        if ((leftHit.collider != null || rightHit.collider != null) && (lastHit == null || lastHit != leftHit.collider && lastHit != rightHit.collider))
+        if (leftHitDown.collider != null && leftHitUp.collider != null)
         {
+            // hit wall on left side
+        }
+
+        if (rightHitDown.collider != null && rightHitUp.collider != null)
+        {
+            // hit wall on right side
             moveController.ChangeDirection();
-            lastHit = leftHit.collider != null ? leftHit.collider : rightHit.collider;
         }
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(rayOrigin.position, rayOrigin.position + Vector3.left * rayDistance);
-        Gizmos.DrawLine(rayOrigin.position, rayOrigin.position + Vector3.right * rayDistance);
+        Gizmos.DrawLine(rayOriginUp.position, rayOriginUp.position + Vector3.left * rayDistance);
+        Gizmos.DrawLine(rayOriginUp.position, rayOriginUp.position + Vector3.right * rayDistance);
+        
+        Gizmos.DrawLine(rayOriginDown.position, rayOriginDown.position + Vector3.left * rayDistance);
+        Gizmos.DrawLine(rayOriginDown.position, rayOriginDown.position + Vector3.right * rayDistance);
     }
 }

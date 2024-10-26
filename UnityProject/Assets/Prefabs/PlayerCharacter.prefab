@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4990897382871071018}
-  m_Layer: 0
-  m_Name: HeadRaycastOrigin
+  m_Layer: 7
+  m_Name: TurnRaycastUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6106458615553052827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundRaycastOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906023927608997118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundRaycastOrigin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,6 +93,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8376706716991687775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7639417493400416914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3449245860644766574}
+  m_Layer: 7
+  m_Name: TurnRaycastDown
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3449245860644766574
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639417493400416914}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8376706716991687775}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9099263927684070704
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +139,7 @@ GameObject:
   - component: {fileID: 2590357579202786035}
   - component: {fileID: 3838053695208656578}
   - component: {fileID: 8571173572372293863}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlayerCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,6 +160,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4990897382871071018}
+  - {fileID: 3449245860644766574}
   - {fileID: 6106458615553052827}
   - {fileID: 906023927608997118}
   m_Father: {fileID: 0}
@@ -281,8 +313,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a2a680601f017d46a1ed40f9a16b5cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rayDistance: 1
+  rayDistance: 0.8
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  rayOrigin: {fileID: 4990897382871071018}
+  rayOriginUp: {fileID: 4990897382871071018}
+  rayOriginDown: {fileID: 3449245860644766574}
