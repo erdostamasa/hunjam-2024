@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae82abdd00e9138469ddf6beb1ca0ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.05
-  maxSpeed: 0.001
+  moveSpeed: 0.1
+  maxSpeed: 0.02
   mouseDeadZone: 0

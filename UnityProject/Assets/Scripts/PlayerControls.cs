@@ -9,6 +9,11 @@ public class PlayerControls : MonoBehaviour
 
     void Update()
     {
+        if (MenuManager.Instance.Paused)
+        {
+            return;
+        }
+        
         if (Input.GetMouseButton(0))
         {
             HandleTimeControls();
