@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 4132065677542580910}
   - component: {fileID: 6972907758701013885}
   - component: {fileID: 6994034176829244570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: minute_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1979348340639731621}
   - component: {fileID: 2306759665398288822}
   - component: {fileID: 9013432405208266532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hour_collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
