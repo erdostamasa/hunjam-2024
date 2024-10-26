@@ -4,7 +4,17 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     private static MenuManager instance = null;
-    
+
+    public bool Paused;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InvokePausePanel();
+        }
+    }
+
     public static MenuManager Instance
     {
         get
@@ -27,6 +37,7 @@ public class MenuManager : MonoBehaviour
     }
 
     public GameObject MainPanel;
+    public GameObject PausePanel;
 
     private static int currentLevelIndex;
 
@@ -45,4 +56,25 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void InvokePausePanel()
+    {
+        if(MainPanel.active == false)
+        {
+            Paused = true;
+            PausePanel.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+    }
+
+    public void ResumeGame()
+    {
+        if (MainPanel.active == false)
+        {
+            Paused = false;
+            Time.timeScale = 1f;
+            PausePanel.SetActive(false);
+        }
+    }
+
 }
