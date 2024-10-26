@@ -4,7 +4,8 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
-    [SerializeField] private Transform groundRaycast;
+    [SerializeField] private Transform groundRaycast1;
+    [SerializeField] private Transform groundRaycast2;
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundMask;
 
@@ -19,7 +20,8 @@ public class MoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!Physics2D.Raycast(groundRaycast.position, Vector2.down, groundCheckDistance, groundMask))
+        if (!Physics2D.Raycast(groundRaycast1.position, Vector2.down, groundCheckDistance, groundMask) &&
+            !Physics2D.Raycast(groundRaycast2.position, Vector2.down, groundCheckDistance, groundMask))
         {
             // we are not on the ground, don't move
             return;
@@ -43,6 +45,7 @@ public class MoveController : MonoBehaviour
         //Gizmos.color = Color.red;
         //Debug.DrawLine(groundRaycast.position, groundRaycast.position + Vector3.down * groundCheckDistance, Color.red);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(groundRaycast.position, groundRaycast.position + Vector3.down * groundCheckDistance);
+        Gizmos.DrawLine(groundRaycast1.position, groundRaycast1.position + Vector3.down * groundCheckDistance);
+        Gizmos.DrawLine(groundRaycast2.position, groundRaycast2.position + Vector3.down * groundCheckDistance);
     }
 }
