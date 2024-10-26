@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:UnityProject/Assets/Prefabs/Test/TestPlatform.prefab.meta
-guid: 6d2f4467d428f944cb3fc73246eb0c2b
-========
 guid: 1db0d2259b95f9340bc91fdac5f13e1e
->>>>>>>> 50fb8109f109e558fbfdf5d128b04ef2d93460d2:UnityProject/Assets/Prefabs/PendulumClockSmall.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

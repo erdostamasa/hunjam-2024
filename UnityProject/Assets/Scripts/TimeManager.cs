@@ -5,17 +5,13 @@ public static class TimeManager
 {
     public static double CurrentTime { private set; get; }
 
-    public static float UnwrappedTime { private set; get; }
-
     public static void ResetTime()
     {
         CurrentTime = 0.5;
-        UnwrappedTime = 0f;
     }
 
     public static void AddTime(double change)
     {
-        // CurrentTime
         double newTime = CurrentTime + change;
         double fraction = Math.Abs(newTime - Math.Truncate(newTime));
         if (newTime < 0.0)
@@ -26,9 +22,6 @@ public static class TimeManager
         {
             CurrentTime = fraction;
         }
-
-        // UnwrappedTime
-        UnwrappedTime += (float)change;
 
         // Debug.Log($"CurrentTime: {CurrentTime}");
     }

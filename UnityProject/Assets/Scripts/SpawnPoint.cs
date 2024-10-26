@@ -6,7 +6,6 @@ public class SpawnPoint : MonoBehaviour
 
     private void Start()
     {
-        SpawnPlayer();
         EventManager.onPlayerDeath += SpawnPlayer;
     }
 
