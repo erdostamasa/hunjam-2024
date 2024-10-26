@@ -9,10 +9,10 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         float moveDirection = Input.GetAxis("Mouse X");
-        
+
         float moveAmount = moveDirection * moveSpeed * Time.deltaTime;
-        
-        moveAmount = Mathf.Clamp(moveAmount, 0, maxSpeed);
+
+        moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
         TimeManager.AddTime(moveAmount);
 
         Debug.Log($"movedir: {moveDirection}\n" +
