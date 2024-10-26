@@ -12,7 +12,10 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        if (PausePanel != null)
+        {
             PausePanel.SetActive(false);
+        }
     }
 
     void Update()
@@ -45,7 +48,6 @@ public class MenuManager : MonoBehaviour
     }
 
 
-
     private static int currentLevelIndex;
 
     private void Awake()
@@ -66,7 +68,7 @@ public class MenuManager : MonoBehaviour
 
     public void InvokePausePanel()
     {
-        if(MainPanel.active == false)
+        if (MainPanel.active == false)
         {
             Paused = true;
             PausePanel.SetActive(true);
@@ -105,5 +107,4 @@ public class MenuManager : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-
 }
