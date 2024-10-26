@@ -9,14 +9,14 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         float moveDirection = Input.GetAxis("Mouse X");
-        
+
         float moveAmount = moveDirection * moveSpeed * Time.deltaTime;
 
         if (Mathf.Abs(moveAmount) < mouseDeadZone)
         {
             return;
         }
-        
+
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
         TimeManager.AddTime(moveAmount);
     }
