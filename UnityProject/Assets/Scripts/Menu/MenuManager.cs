@@ -7,6 +7,9 @@ public class MenuManager : MonoBehaviour
 
     public bool Paused;
 
+    public GameObject MainPanel;
+    public GameObject PausePanel;
+
     void Start()
     {
             PausePanel.SetActive(false);
@@ -41,8 +44,7 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public GameObject MainPanel;
-    public GameObject PausePanel;
+
 
     private static int currentLevelIndex;
 
