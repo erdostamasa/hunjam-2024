@@ -26,6 +26,10 @@ public class PlayerControls : MonoBehaviour
         {
             HandleTimeControls();
         }
+        else
+        {
+            targetVolume = Mathf.Lerp(targetVolume, 0, Time.deltaTime * volumeChangeSpeed);
+        }
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -56,7 +60,7 @@ public class PlayerControls : MonoBehaviour
 
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
 
-        targetVolume = moveAmount * targetSpeedScalar;
+        targetVolume = Mathf.Abs(moveAmount) * targetSpeedScalar;
         
         TimeManager.AddTime(moveAmount);
         
@@ -65,7 +69,7 @@ public class PlayerControls : MonoBehaviour
     private void HandleClickSound()
     {
         source.volume = Mathf.Lerp(source.volume, targetVolume, Time.deltaTime * volumeChangeSpeed);
-        Debug.Log($"volume: {source.volume}");
+        Debug.Log($"volume: {source.volume} targetolume: {targetVolume}");
     }
 
     private void HandleRestart()
