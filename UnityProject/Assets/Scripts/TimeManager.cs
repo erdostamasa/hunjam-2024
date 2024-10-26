@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public static class TimeManager
 {
@@ -21,6 +22,8 @@ public static class TimeManager
         {
             CurrentTime = fraction;
         }
+        
+        Debug.Log($"CurrentTime: {CurrentTime}");
     }
 
 }
