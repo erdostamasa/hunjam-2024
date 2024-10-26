@@ -7,6 +7,11 @@ public class MenuManager : MonoBehaviour
 
     public bool Paused;
 
+    void Start()
+    {
+            PausePanel.SetActive(false);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -74,6 +79,25 @@ public class MenuManager : MonoBehaviour
             Paused = false;
             Time.timeScale = 1f;
             PausePanel.SetActive(false);
+        }
+    }
+
+    public void ExitToMenu()
+    {
+        if (MainPanel.active == false)
+        {
+            MainPanel.SetActive(true);
+            Paused = false;
+            Time.timeScale = 1f;
+            PausePanel.SetActive(false);
+        }
+    }
+
+    public void RestartLevel()
+    {
+        if (MainPanel.active == false)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
