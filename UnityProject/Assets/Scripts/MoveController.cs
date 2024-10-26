@@ -11,7 +11,7 @@ public class MoveController : MonoBehaviour
     private bool goingRight = true;
     private Rigidbody2D rb;
     private const float velocityMatchSpeed = 8f;
-    
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -24,12 +24,12 @@ public class MoveController : MonoBehaviour
             // we are not on the ground, don't move
             return;
         }
-        
+
         // Calculate the difference between the target speed and the current velocity
-        float velocityDifference = moveSpeed - rb.linearVelocity.x;
+        float velocityDifference = moveSpeed - Math.Abs(rb.linearVelocity.x);
 
         // Apply force based on the difference to adjust towards the target speed
-        
+
         rb.AddForce(new Vector2(velocityDifference * velocityMatchSpeed * (goingRight ? 1 : -1), 0), ForceMode2D.Force);
     }
 
