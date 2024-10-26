@@ -6,6 +6,14 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float mouseDeadZone = 0f;
+    
+    [Header("Click sounds")]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private float minVolume = 0f;
+    [SerializeField] private float maxVolume = 1f;
+    [SerializeField] private float volumeChangeSpeed = 1f;
+    [SerializeField] private float targetSpeedScalar = 10f;
+    private float targetVolume = 0;
 
     void Update()
     {
@@ -32,6 +40,7 @@ public class PlayerControls : MonoBehaviour
         }
 
         HandleRestart();
+        HandleClickSound();
     }
 
     private void HandleTimeControls()
@@ -46,7 +55,17 @@ public class PlayerControls : MonoBehaviour
         }
 
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
+
+        targetVolume = moveAmount * targetSpeedScalar;
+        
         TimeManager.AddTime(moveAmount);
+        
+    }
+
+    private void HandleClickSound()
+    {
+        source.volume = Mathf.Lerp(source.volume, targetVolume, Time.deltaTime * volumeChangeSpeed);
+        Debug.Log($"volume: {source.volume}");
     }
 
     private void HandleRestart()
