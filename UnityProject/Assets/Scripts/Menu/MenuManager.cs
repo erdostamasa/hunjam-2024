@@ -98,6 +98,9 @@ public class MenuManager : MonoBehaviour
         if (MainPanel.active == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            PausePanel.SetActive(false);
+            Paused = false;
+            Time.timeScale = 1f;
         }
     }
 
