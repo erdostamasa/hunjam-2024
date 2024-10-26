@@ -9,6 +9,10 @@ public class MoveController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundMask;
 
+    [SerializeField]
+    private Animator animator;
+
+
     private bool goingRight = true;
     private Rigidbody2D rb;
     private const float velocityMatchSpeed = 8f;
@@ -16,6 +20,20 @@ public class MoveController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        animator.SetFloat("MoveSpeed", Math.Abs(rb.linearVelocity.x));
+
+        if (goingRight)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void FixedUpdate()
