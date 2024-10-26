@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 5285585085717054317}
   - component: {fileID: 6385657235008442935}
   - component: {fileID: 3894473997549060400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PendulumCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
