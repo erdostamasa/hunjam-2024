@@ -12,11 +12,12 @@ public class PlayerControls : MonoBehaviour
 
         float moveAmount = moveDirection * moveSpeed * Time.deltaTime;
 
+        if (Mathf.Abs(moveAmount) < mouseDeadZone)
+        {
+            return;
+        }
+
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
         TimeManager.AddTime(moveAmount);
-
-        Debug.Log($"movedir: {moveDirection}\n" +
-                  $"moveamount: {moveAmount} \n" +
-                  TimeManager.CurrentTime);
     }
 }
