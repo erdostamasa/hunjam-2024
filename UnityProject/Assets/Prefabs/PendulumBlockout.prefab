@@ -403,7 +403,7 @@ Transform:
   m_GameObject: {fileID: 7891911742150437892}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.59647506, y: -3.0320148, z: 0.19125675}
+  m_LocalPosition: {x: 0.59647495, y: -3.0320146, z: 0.19125675}
   m_LocalScale: {x: 1.3300004, y: 1.3300002, z: 1.3300004}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -573,9 +573,17 @@ PrefabInstance:
       propertyPath: pendulum
       value: 
       objectReference: {fileID: 3008923693318675312}
+    - target: {fileID: 1628264559882781034, guid: ac08c93cba3ed4d4a89034b4bd1ed3df, type: 3}
+      propertyPath: hourPointer
+      value: 
+      objectReference: {fileID: 4567753214199266200}
+    - target: {fileID: 1628264559882781034, guid: ac08c93cba3ed4d4a89034b4bd1ed3df, type: 3}
+      propertyPath: minutePointer
+      value: 
+      objectReference: {fileID: 4856746625218943461}
     - target: {fileID: 3241665280213243262, guid: ac08c93cba3ed4d4a89034b4bd1ed3df, type: 3}
       propertyPath: m_Name
-      value: PendulumBase Variant
+      value: PendulumBlockout
       objectReference: {fileID: 0}
     - target: {fileID: 8979127596624523166, guid: ac08c93cba3ed4d4a89034b4bd1ed3df, type: 3}
       propertyPath: m_LocalPosition.x
