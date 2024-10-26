@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
@@ -7,6 +8,10 @@ public class SpawnPoint : MonoBehaviour
     private void Start()
     {
         SpawnPlayer();
+    }
+
+    private void OnEnable()
+    {
         EventManager.onPlayerDeath += SpawnPlayer;
     }
 
