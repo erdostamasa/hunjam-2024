@@ -13,7 +13,7 @@ public static class TimeManager
     public static void AddTime(double change)
     {
         double newTime = CurrentTime + change;
-        double fraction = newTime - Math.Truncate(newTime);
+        double fraction = Math.Abs(newTime - Math.Truncate(newTime));
         if (newTime < 0.0)
         {
             CurrentTime = 1 - fraction;

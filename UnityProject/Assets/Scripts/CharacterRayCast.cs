@@ -6,6 +6,15 @@ public class CharacterRayCast : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private Transform rayOrigin;
 
+    private MoveController moveController;
+
+    private Collider2D lastHit;
+
+    void Start()
+    {
+        moveController = GetComponent<MoveController>();
+    }
+
     void FixedUpdate()
     {
         var leftHit = Physics2D.Raycast(rayOrigin.position, Vector3.left, rayDistance, layerMask);
@@ -19,6 +28,12 @@ public class CharacterRayCast : MonoBehaviour
         if (rightHit.collider != null)
         {
             Debug.Log("Hit something in right direction");
+        }
+
+        if ((leftHit.collider != null || rightHit.collider != null) && (lastHit == null || lastHit != leftHit.collider && lastHit != rightHit.collider))
+        {
+            moveController.ChangeDirection();
+            lastHit = leftHit.collider != null ? leftHit.collider : rightHit.collider;
         }
     }
 
