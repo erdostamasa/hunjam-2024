@@ -185,9 +185,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 100000
+  m_LinearDamping: 1
+  m_AngularDamping: 0
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 75b6cbf54a10f8b4bab331f7a3aa4e0f, type: 2}
   m_IncludeLayers:
@@ -257,6 +257,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 2829724516543946372}
+  maxVerticalSpeed: 10
+  maxHorizontalSpeed: 10
 --- !u!114 &8571173572372293863
 MonoBehaviour:
   m_ObjectHideFlags: 0

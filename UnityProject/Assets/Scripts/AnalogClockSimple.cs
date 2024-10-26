@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class AnalogClockSimple : MonoBehaviour
 {
-    [SerializeField] private Transform hourPointer;
-    [SerializeField] private Transform minutePointer;
+    [SerializeField] private Rigidbody2D hourPointer;
+    [SerializeField] private Rigidbody2D minutePointer;
 
     // Rotation axes for hour and minute pointers
     [SerializeField] private Vector3 hourRotationAxis = Vector3.forward;
@@ -15,9 +15,9 @@ public class AnalogClockSimple : MonoBehaviour
 
     private void Start()
     {
-        // Initialize base rotations from the rotation of each pointer around the specified axis
-        baseHourRotation = Vector3.Project(hourPointer.localRotation.eulerAngles, hourRotationAxis).magnitude;
-        baseMinuteRotation = Vector3.Project(minutePointer.localRotation.eulerAngles, minuteRotationAxis).magnitude;
+        // // Initialize base rotations from the rotation of each pointer around the specified axis
+        // baseHourRotation = Vector3.Project(hourPointer.localRotation.eulerAngles, hourRotationAxis).magnitude;
+        // baseMinuteRotation = Vector3.Project(minutePointer.localRotation.eulerAngles, minuteRotationAxis).magnitude;
     }
 
     private void FixedUpdate()
@@ -36,10 +36,17 @@ public class AnalogClockSimple : MonoBehaviour
 
         // Apply the rotation, factoring in the base rotations and rotation axes
 
+        // Calculate angular velocities
+        float hourAngularVelocity = (hourAngle - hourPointer.rotation) / Time.fixedDeltaTime;
+        float minuteAngularVelocity = (minuteAngle - minutePointer.rotation) / Time.fixedDeltaTime;
 
 
-        hourPointer.localRotation = Quaternion.AngleAxis(-hourAngle + baseHourRotation, hourRotationAxis);
-        minutePointer.localRotation = Quaternion.AngleAxis(-minuteAngle + baseMinuteRotation, minuteRotationAxis);
+        Debug.Log("Hour Angle: " + hourAngle + " Minute Angle: " + minuteAngle);
+        Debug.Log("Hour Angular Velocity: " + hourAngularVelocity + " Minute Angular Velocity: " + minuteAngularVelocity);
+
+        // Apply angular velocities to the rigidbodies
+        hourPointer.angularVelocity = hourAngularVelocity;
+        minutePointer.angularVelocity = minuteAngularVelocity;
 
     }
 }
