@@ -36,6 +36,7 @@ public class CharacterRayCast : MonoBehaviour
         if (leftHitDown.collider != null && leftHitUp.collider != null)
         {
             // hit wall on left side
+            moveController.ChangeDirection();
         }
 
         if (rightHitDown.collider != null && rightHitUp.collider != null)
