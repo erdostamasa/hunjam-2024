@@ -4,5 +4,15 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ClockManager.unity
+    guid: e6c0edbe6ed8d374d8fc0ac645dcffda
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1.unity
+    guid: 4eeb2d9ec827f8a42b5d2136e0bba548
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2.unity
+    guid: 41ce1fecc12ced04a97923e440396e03
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
