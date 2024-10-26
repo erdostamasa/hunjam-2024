@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0.1
-  maxSpeed: 0.02
+  maxSpeed: 0.003
   mouseDeadZone: 0

@@ -9,13 +9,20 @@ public class MoveController : MonoBehaviour
     [SerializeField] private float groundCheckDistance = 0.2f;
     [SerializeField] private LayerMask groundMask;
 
+
+
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private float maxVerticalSpeed = 50f;
+
+    [SerializeField]
+    private float maxHorizontalSpeed = 50f;
 
 
     private bool goingRight = true;
     private Rigidbody2D rb;
-    private const float velocityMatchSpeed = 8f;
 
     void Start()
     {
@@ -38,6 +45,7 @@ public class MoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        rb.linearVelocity = new Vector2(Math.Min(rb.linearVelocity.x, maxHorizontalSpeed), Math.Min(rb.linearVelocity.y, maxVerticalSpeed));
         if (!Physics2D.Raycast(groundRaycast1.position, Vector2.down, groundCheckDistance, groundMask) &&
             !Physics2D.Raycast(groundRaycast2.position, Vector2.down, groundCheckDistance, groundMask))
         {
