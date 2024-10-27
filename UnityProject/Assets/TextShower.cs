@@ -4,6 +4,7 @@ using System.Collections;
 
 public class TextShower : MonoBehaviour
 {
+    [TextArea(15,20)]
     [SerializeField] private string textToShow;
     [SerializeField] private TextMeshProUGUI textMeshPro;
 

@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class MoveController : MonoBehaviour
 {
+    [HideInInspector] public bool waitForClickBeforeMoving = true;
+    [SerializeField] private bool canMove = false;
+
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] private Transform groundRaycast1;
     [SerializeField] private Transform groundRaycast2;
@@ -12,11 +15,9 @@ public class MoveController : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
-    [SerializeField]
-    private float maxVerticalSpeed = 50f;
+    [SerializeField] private float maxVerticalSpeed = 50f;
 
-    [SerializeField]
-    private float maxHorizontalSpeed = 50f;
+    [SerializeField] private float maxHorizontalSpeed = 50f;
 
 
     private bool goingRight = true;
@@ -27,10 +28,28 @@ public class MoveController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        if (!waitForClickBeforeMoving)
+        {
+            canMove = true;
+        }
     }
 
     void Update()
     {
+        if (waitForClickBeforeMoving && !canMove)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                canMove = true;
+            }
+        }
+
+        if (!canMove)
+        {
+            return;
+        }
+
         timeSinceLastTurn += Time.deltaTime;
 
         animator.SetFloat("MoveSpeed", Math.Abs(rb.linearVelocity.x));
@@ -47,7 +66,13 @@ public class MoveController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(Math.Min(rb.linearVelocity.x, maxHorizontalSpeed), Math.Min(rb.linearVelocity.y, maxVerticalSpeed));
+        if (!canMove)
+        {
+            return;
+        }
+
+        rb.linearVelocity = new Vector2(Math.Min(rb.linearVelocity.x, maxHorizontalSpeed),
+            Math.Min(rb.linearVelocity.y, maxVerticalSpeed));
         if (!Physics2D.Raycast(groundRaycast1.position, Vector2.down, groundCheckDistance, groundMask) &&
             !Physics2D.Raycast(groundRaycast2.position, Vector2.down, groundCheckDistance, groundMask))
         {

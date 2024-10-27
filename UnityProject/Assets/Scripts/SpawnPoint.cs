@@ -1,13 +1,14 @@
-using System;
 using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
+    [SerializeField] private bool waitsForClickBeforeMoving = false;
 
     private void Start()
     {
-        SpawnPlayer();
+        GameObject player = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        player.GetComponent<MoveController>().waitForClickBeforeMoving = waitsForClickBeforeMoving;
     }
 
     private void OnEnable()
