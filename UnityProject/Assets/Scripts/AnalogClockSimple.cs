@@ -25,7 +25,7 @@ public class AnalogClockSimple : MonoBehaviour
         // Calculate angular velocities
         float hourAngularVelocity = (hourAngle - hourPointer.rotation) / Time.fixedDeltaTime;
         float minuteAngularVelocity = (minuteAngle - minutePointer.rotation) / Time.fixedDeltaTime;
-        
+
         // Debug.Log("Hour Angle: " + hourAngle + " Minute Angle: " + minuteAngle);
         // Debug.Log("Hour Angular Velocity: " + hourAngularVelocity + " Minute Angular Velocity: " + minuteAngularVelocity);
 
