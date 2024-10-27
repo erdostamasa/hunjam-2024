@@ -36,7 +36,7 @@ RenderSettings:
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
-  m_CustomReflection: {fileID: 2092804985}
+  m_CustomReflection: {fileID: 2087609955}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6675630483466148405, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.52
+      value: -31.1
       objectReference: {fileID: 0}
     - target: {fileID: 7413964646385263927, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -418,14 +418,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3271563918668834650, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 598867907}
+      addedObject: {fileID: 598867906}
   m_SourcePrefab: {fileID: 100100000, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
 --- !u!1 &598867905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3271563918668834650, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
   m_PrefabInstance: {fileID: 598867904}
   m_PrefabAsset: {fileID: 0}
---- !u!215 &598867907
+--- !u!215 &598867906
 ReflectionProbe:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -636,7 +636,7 @@ Transform:
   - {fileID: 1356398510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!89 &2092804985
+--- !u!89 &2087609955
 Cubemap:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
