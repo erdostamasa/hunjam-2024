@@ -26,5 +26,6 @@ public class SkyboxBlenderChanger : MonoBehaviour
         skyboxBlender.skyBox2 = Skyboxes[nextIndex];
         skyboxBlender.blend = (float)lerp;
         skyboxBlender.BindTextures();
+        skyboxBlender.rotation = 360 * (float)time;
     }
 }
