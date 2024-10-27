@@ -36,7 +36,7 @@ RenderSettings:
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
-  m_CustomReflection: {fileID: 1020146162}
+  m_CustomReflection: {fileID: 739267918}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -331,12 +331,24 @@ PrefabInstance:
       value: 0.00000009362675
       objectReference: {fileID: 0}
     - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.5496516
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.5496516
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.5496516
+      objectReference: {fileID: 0}
+    - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.91
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.38
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 5475511535361323975, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
       propertyPath: m_LocalPosition.z
@@ -375,7 +387,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3abe37ab23a628e4d89e65ad92599444, type: 3}
---- !u!89 &1020146162
+--- !u!89 &739267918
 Cubemap:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,6 +440,44 @@ Cubemap:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!1 &1348509000 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2995259653384073077, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
+  m_PrefabInstance: {fileID: 1350002629488235139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!215 &1348509001
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348509000}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 2
+  m_TimeSlicingMode: 2
+  m_Resolution: 16
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 1, y: 1, z: 1}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
 --- !u!1001 &1676429551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -604,6 +654,7 @@ PrefabInstance:
     - {fileID: 3749476489545159498, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
     - {fileID: 4586906264251470070, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
     - {fileID: 70990694635732639, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
+    - {fileID: 5687570165398568833, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
     m_RemovedGameObjects:
     - {fileID: 8432786198522785927, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
     m_AddedGameObjects:
@@ -620,6 +671,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2004276795856497361, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1350002629488235144}
+    - targetCorrespondingSourceObject: {fileID: 2995259653384073077, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1348509001}
   m_SourcePrefab: {fileID: 100100000, guid: b995e62f812f48f44b013c58052dc9ae, type: 3}
 --- !u!4 &1350002629488235140 stripped
 Transform:
