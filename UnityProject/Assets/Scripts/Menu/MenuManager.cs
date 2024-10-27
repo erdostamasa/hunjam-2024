@@ -82,6 +82,10 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
+        // Release cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

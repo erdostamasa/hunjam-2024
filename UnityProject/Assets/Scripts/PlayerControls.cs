@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,14 +7,20 @@ public class PlayerControls : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float mouseDeadZone = 0f;
-    
-    [Header("Click sounds")]
-    [SerializeField] private AudioSource source;
+
+    [Header("Click sounds")] [SerializeField]
+    private AudioSource source;
+
     [SerializeField] private float minVolume = 0f;
     [SerializeField] private float maxVolume = 1f;
     [SerializeField] private float volumeChangeSpeed = 1f;
     [SerializeField] private float targetSpeedScalar = 10f;
     private float targetVolume = 0;
+
+    private void Start()
+    {
+        TimeManager.ResetTime();
+    }
 
     void Update()
     {
@@ -21,7 +28,7 @@ public class PlayerControls : MonoBehaviour
         {
             return;
         }
-        
+
         if (Input.GetMouseButton(0))
         {
             HandleTimeControls();
@@ -61,9 +68,8 @@ public class PlayerControls : MonoBehaviour
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
 
         targetVolume = Mathf.Abs(moveAmount) * targetSpeedScalar;
-        
+
         TimeManager.AddTime(moveAmount);
-        
     }
 
     private void HandleClickSound()
@@ -76,7 +82,6 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            TimeManager.ResetTime();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
