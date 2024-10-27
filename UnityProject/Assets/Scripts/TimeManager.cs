@@ -99,6 +99,9 @@ public class TimeManager : MonoBehaviour
         PlayerControls.Instance.gameObject.SetActive(false);
         ClickSoundManager.Instance.SetVolumeDirectly(1f);
 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         // Set a small threshold to account for float precision issues
         const float targetTime = 0.5f;
         const float precision = 0.001f;
@@ -119,35 +122,6 @@ public class TimeManager : MonoBehaviour
 
         ClickSoundManager.Instance.SetVolumeDirectly(0f);
         PlayerControls.Instance.gameObject.SetActive(true);
-        
-        // PlayerControls.Instance.gameObject.SetActive(false);
-        // ClickSoundManager.Instance.SetVolumeDirectly(1f);
-        //
-        // if (UnClampedTime > 0.5f)
-        // {
-        //     while (UnClampedTime > 0.5f)
-        //     {
-        //         float diff = Mathf.Abs(UnClampedTime) - 0.5f;
-        //         float scalar = Mathf.Max(diff, 0.05f);
-        //         AddTime(-timeRewindSpeed * Time.deltaTime * scalar);
-        //         yield return null;
-        //     }
-        // }
-        //
-        // if (UnClampedTime < 0.5f)
-        // {
-        //     while (UnClampedTime < 0.5f)
-        //     {
-        //         float diff = Mathf.Abs(UnClampedTime) - 0.5f;
-        //         float scalar = Mathf.Max(diff, 0.05f);
-        //         AddTime(timeRewindSpeed * Time.deltaTime * scalar);
-        //         yield return null;
-        //     }
-        // }
-        //
-        // ResetTime();
-        //
-        // ClickSoundManager.Instance.SetVolumeDirectly(0f);
-        // PlayerControls.Instance.gameObject.SetActive(true);
+
     }
 }
