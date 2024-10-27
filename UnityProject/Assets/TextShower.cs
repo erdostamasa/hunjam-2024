@@ -12,6 +12,9 @@ public class TextShower : MonoBehaviour
 
     [SerializeField] private float delay = 0f;
 
+    // [SerializeField] private AudioClip sound;
+    [SerializeField] private AudioSource source;
+
     // Setter for the text to show
     public string TextToShow
     {
@@ -34,6 +37,8 @@ public class TextShower : MonoBehaviour
         textMeshPro.text = "";
 
         yield return new WaitForSeconds(delay);
+        
+        source.Play();
         
         foreach (var c in textToShow.ToCharArray())
         {
