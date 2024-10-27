@@ -49,7 +49,7 @@ public class ClickSoundManager : MonoBehaviour
     public void SetTargetVolume(float volume)
     {
         targetVolume = Mathf.Abs(volume) * targetSpeedScalar;
-        Debug.Log($"targetvolume: {targetVolume}");
+        // Debug.Log($"targetvolume: {targetVolume}");
     }
 
     public void SetVolumeDirectly(float volume)
