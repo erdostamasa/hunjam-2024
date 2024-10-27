@@ -1,22 +1,35 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerControls : MonoBehaviour
 {
+    private static PlayerControls instance = null;
+
+    public static PlayerControls Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<PlayerControls>();
+            }
+
+            if (instance == null)
+            {
+                GameObject gObj = new GameObject();
+                gObj.name = "MenuManager";
+                instance = gObj.AddComponent<PlayerControls>();
+                DontDestroyOnLoad(gObj);
+            }
+
+            return instance;
+        }
+    }
+    
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float maxSpeed = 1f;
     [SerializeField] private float mouseDeadZone = 0f;
-
-    [Header("Click sounds")] [SerializeField]
-    private AudioSource source;
-
-    [SerializeField] private float minVolume = 0f;
-    [SerializeField] private float maxVolume = 1f;
-    [SerializeField] private float volumeChangeSpeed = 1f;
-    [SerializeField] private float targetSpeedScalar = 10f;
-    private float targetVolume = 0;
-
+    
     private void Start()
     {
         TimeManager.ResetTime();
@@ -33,10 +46,7 @@ public class PlayerControls : MonoBehaviour
         {
             HandleTimeControls();
         }
-        else
-        {
-            targetVolume = Mathf.Lerp(targetVolume, 0, Time.deltaTime * volumeChangeSpeed);
-        }
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -46,12 +56,13 @@ public class PlayerControls : MonoBehaviour
 
         if (Input.GetMouseButtonUp(0))
         {
+            ClickSoundManager.Instance.SetTargetVolume(0);
+            
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
         HandleRestart();
-        HandleClickSound();
     }
 
     private void HandleTimeControls()
@@ -67,15 +78,9 @@ public class PlayerControls : MonoBehaviour
 
         moveAmount = Mathf.Clamp(moveAmount, -maxSpeed, maxSpeed);
 
-        targetVolume = Mathf.Abs(moveAmount) * targetSpeedScalar;
+        ClickSoundManager.Instance.SetTargetVolume(moveAmount);
 
-        TimeManager.AddTime(moveAmount);
-    }
-
-    private void HandleClickSound()
-    {
-        source.volume = Mathf.Lerp(source.volume, targetVolume, Time.deltaTime * volumeChangeSpeed);
-        // Debug.Log($"volume: {source.volume} targetolume: {targetVolume}");
+        TimeManager.Instance.AddTime(-moveAmount);
     }
 
     private void HandleRestart()
