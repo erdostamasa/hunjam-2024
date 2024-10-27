@@ -1,17 +1,25 @@
-using System;
 using UnityEngine;
 
 public class HourGlassClock : MonoBehaviour
 {
     [SerializeField] private Transform upSand;
     [SerializeField] private Transform downSand;
-    
-    private float upStartScale = 1f;
-    private float upEndScale = 0f;
-    
-    private float downStartScale = 0f;
-    private float downEndScale = 1f;
 
+    [SerializeField] private Transform upSandCollider;
+    [SerializeField] private Transform downSandCollider;
+    
+    [SerializeField] private float upStartScale = 1f;
+    [SerializeField] private float upEndScale = 0f;
+
+    [SerializeField] private float downStartScale = 0f;
+    [SerializeField] private float downEndScale = 1f;
+
+    
+    [SerializeField] private float upStartColliderScale = 1f;
+    [SerializeField] private float upEndColliderScale = 0f;
+
+    [SerializeField] private float downStartColliderScale = 0f;
+    [SerializeField] private float downEndColliderScale = 1f;
 
     private void FixedUpdate()
     {
@@ -20,14 +28,26 @@ public class HourGlassClock : MonoBehaviour
 
         upSand.localScale = new Vector3(
             upSand.localScale.x,
-            Mathf.Lerp(upStartScale, upEndScale, time),
-            upSand.localScale.z
-            );
-        
+            upSand.localScale.z,
+            Mathf.Lerp(upStartScale, upEndScale, time)
+        );
+
         downSand.localScale = new Vector3(
             downSand.localScale.x,
-            Mathf.Lerp(downStartScale, downEndScale, time),
-            downSand.localScale.z
+            downSand.localScale.y,
+            Mathf.Lerp(downStartScale, downEndScale, time)
+        );
+        
+        upSandCollider.localScale = new Vector3(
+            upSandCollider.localScale.x,
+            Mathf.Lerp(upStartColliderScale, upEndColliderScale, time),
+            upSandCollider.localScale.z
+        );
+
+        downSandCollider.localScale = new Vector3(
+            downSandCollider.localScale.x,
+            Mathf.Lerp(downStartColliderScale, downEndColliderScale, time),
+            downSandCollider.localScale.z
         );
     }
 }
