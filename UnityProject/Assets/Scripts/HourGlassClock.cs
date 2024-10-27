@@ -28,7 +28,7 @@ public class HourGlassClock : MonoBehaviour
 
         upSand.localScale = new Vector3(
             upSand.localScale.x,
-            upSand.localScale.z,
+            upSand.localScale.y,
             Mathf.Lerp(upStartScale, upEndScale, time)
         );
 
