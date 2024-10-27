@@ -9,8 +9,6 @@ public class CharacterRayCast : MonoBehaviour
 
     private MoveController moveController;
 
-    private Collider2D lastHit;
-
     void Start()
     {
         moveController = GetComponent<MoveController>();
