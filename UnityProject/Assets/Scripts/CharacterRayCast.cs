@@ -24,14 +24,14 @@ public class CharacterRayCast : MonoBehaviour
         var rightHitUp = Physics2D.Raycast(rayOriginUp.position, Vector3.right, rayDistance, layerMask);
         var rightHitDown = Physics2D.Raycast(rayOriginDown.position, Vector3.right, rayDistance, layerMask);
 
-        if (leftHitUp.collider != null)
-        {
-            Debug.Log("Hit something in left direction");
-        }
-        if (rightHitUp.collider != null)
-        {
-            Debug.Log("Hit something in right direction");
-        }
+        // if (leftHitUp.collider != null)
+        // {
+        //     Debug.Log("Hit something in left direction");
+        // }
+        // if (rightHitUp.collider != null)
+        // {
+        //     Debug.Log("Hit something in right direction");
+        // }
 
         if (leftHitDown.collider != null && leftHitUp.collider != null)
         {
@@ -51,7 +51,7 @@ public class CharacterRayCast : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawLine(rayOriginUp.position, rayOriginUp.position + Vector3.left * rayDistance);
         Gizmos.DrawLine(rayOriginUp.position, rayOriginUp.position + Vector3.right * rayDistance);
-        
+
         Gizmos.DrawLine(rayOriginDown.position, rayOriginDown.position + Vector3.left * rayDistance);
         Gizmos.DrawLine(rayOriginDown.position, rayOriginDown.position + Vector3.right * rayDistance);
     }
