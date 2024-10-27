@@ -21,7 +21,7 @@ public class SkyboxBlenderChanger : MonoBehaviour
         var index = (int)(time * Skyboxes.Length);
         var nextIndex = (index + 1) % Skyboxes.Length;
         var lerp = time * Skyboxes.Length - index;
-        Debug.Log($"index: {index}, nextIndex: {nextIndex}, lerp: {lerp}");
+        // Debug.Log($"index: {index}, nextIndex: {nextIndex}, lerp: {lerp}");
         skyboxBlender.skyBox1 = Skyboxes[index];
         skyboxBlender.skyBox2 = Skyboxes[nextIndex];
         skyboxBlender.blend = (float)lerp;
