@@ -69,7 +69,7 @@ public class PlayerControls : MonoBehaviour
     private void HandleClickSound()
     {
         source.volume = Mathf.Lerp(source.volume, targetVolume, Time.deltaTime * volumeChangeSpeed);
-        Debug.Log($"volume: {source.volume} targetolume: {targetVolume}");
+        // Debug.Log($"volume: {source.volume} targetolume: {targetVolume}");
     }
 
     private void HandleRestart()

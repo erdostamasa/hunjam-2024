@@ -15,9 +15,13 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
-        PausePanel.SetActive(false);
+        if (PausePanel != null)
+        {
+            PausePanel.SetActive(false);
+        }
 
-        if (Application.platform != RuntimePlatform.WindowsPlayer) { 
+        if (ExitButton != null && Application.platform != RuntimePlatform.WindowsPlayer)
+        {
             ExitButton.SetActive(false);
         }
     }
@@ -52,7 +56,6 @@ public class MenuManager : MonoBehaviour
     }
 
 
-
     private static int currentLevelIndex;
 
     private void Awake()
@@ -73,7 +76,7 @@ public class MenuManager : MonoBehaviour
 
     public void InvokePausePanel()
     {
-        if(MainPanel.active == false)
+        if (!MainPanel.activeSelf)
         {
             Paused = true;
             PausePanel.SetActive(true);
@@ -83,7 +86,7 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (MainPanel.active == false)
+        if (!MainPanel.activeSelf)
         {
             Paused = false;
             Time.timeScale = 1f;
@@ -93,7 +96,7 @@ public class MenuManager : MonoBehaviour
 
     public void ExitToMenu()
     {
-        if (MainPanel.active == false)
+        if (MainPanel.activeSelf)
         {
             MainPanel.SetActive(true);
             Paused = false;
@@ -104,7 +107,7 @@ public class MenuManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        if (MainPanel.active == false)
+        if (!MainPanel.activeSelf)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             PausePanel.SetActive(false);
@@ -115,7 +118,7 @@ public class MenuManager : MonoBehaviour
 
     public void InvokeCreditPanel()
     {
-        if (MainPanel.active == true)
+        if (MainPanel.activeSelf)
         {
             CreditsPanel.SetActive(true);
         }
@@ -125,5 +128,4 @@ public class MenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-
 }
