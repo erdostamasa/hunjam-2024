@@ -10,8 +10,19 @@ public class MenuManager : MonoBehaviour
     public GameObject MainPanel;
     public GameObject PausePanel;
     public GameObject CreditsPanel;
-
     public GameObject ExitButton;
+
+    private static int currentLevelIndex;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -32,6 +43,13 @@ public class MenuManager : MonoBehaviour
         {
             InvokePausePanel();
         }
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            NextLevel();
+        }
+#endif
     }
 
     public static MenuManager Instance
@@ -56,13 +74,6 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    private static int currentLevelIndex;
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     public void StartGame()
     {
         MainPanel.SetActive(false);
@@ -71,6 +82,10 @@ public class MenuManager : MonoBehaviour
 
     public void NextLevel()
     {
+        // Release cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -86,42 +101,30 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        if (!MainPanel.activeSelf)
-        {
-            Paused = false;
-            Time.timeScale = 1f;
-            PausePanel.SetActive(false);
-        }
+        Paused = false;
+        Time.timeScale = 1f;
+        PausePanel.SetActive(false);
     }
 
     public void ExitToMenu()
     {
-        if (MainPanel.activeSelf)
-        {
-            MainPanel.SetActive(true);
-            Paused = false;
-            Time.timeScale = 1f;
-            PausePanel.SetActive(false);
-        }
+        MainPanel.SetActive(true);
+        Paused = false;
+        Time.timeScale = 1f;
+        PausePanel.SetActive(false);
     }
 
     public void RestartLevel()
     {
-        if (!MainPanel.activeSelf)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            PausePanel.SetActive(false);
-            Paused = false;
-            Time.timeScale = 1f;
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PausePanel.SetActive(false);
+        Paused = false;
+        Time.timeScale = 1f;
     }
 
     public void InvokeCreditPanel()
     {
-        if (MainPanel.activeSelf)
-        {
-            CreditsPanel.SetActive(true);
-        }
+        CreditsPanel.SetActive(true);
     }
 
     public void ExitGame()

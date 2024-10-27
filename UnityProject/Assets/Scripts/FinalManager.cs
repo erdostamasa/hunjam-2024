@@ -3,21 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class FinalManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         MenuManager.Instance.Paused = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void returnToStart()
     {
-
+        // destroy main menu so its not duplicated at the start
+        Destroy(FindFirstObjectByType<MenuManager>().gameObject);
         SceneManager.LoadScene(0);
     }
 }

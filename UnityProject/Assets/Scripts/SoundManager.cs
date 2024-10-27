@@ -14,10 +14,12 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    PlayDeathSound();
-        //}
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayDeathSound();
+        }
+#endif
     }
 
     private void PlayDeathSound()
