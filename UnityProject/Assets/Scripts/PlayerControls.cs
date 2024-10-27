@@ -80,7 +80,7 @@ public class PlayerControls : MonoBehaviour
 
         ClickSoundManager.Instance.SetTargetVolume(moveAmount);
 
-        TimeManager.Instance.AddTime(-moveAmount);
+        TimeManager.Instance.AddTime(moveAmount);
     }
 
     private void HandleRestart()

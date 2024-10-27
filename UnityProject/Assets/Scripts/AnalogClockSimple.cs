@@ -17,8 +17,8 @@ public class AnalogClockSimple : MonoBehaviour
         double minutes = (totalHours - hours) * 60; // remaining fraction of the hour in minutes
 
         // Calculate the angles for the hour and minute hands
-        float hourAngle = (float)(hours * 30 + minutes * 0.5); // 30 degrees per hour + 0.5 degrees per minute
-        float minuteAngle = (float)(minutes * 6); // 6 degrees per minute
+        float hourAngle = -(float)(hours * 30 + minutes * 0.5); // 30 degrees per hour + 0.5 degrees per minute
+        float minuteAngle = -(float)(minutes * 6); // 6 degrees per minute
 
         // Apply the rotation, factoring in the base rotations and rotation axes
 
