@@ -30,9 +30,5 @@ public static class TimeManager
         // UnwrappedTime
         UnwrappedTime += (float)change;
         UnwrappedTime = Mathf.Clamp(UnwrappedTime, 0, 0.2f); // homokóra *5 speeden megy 
-        Debug.Log(UnwrappedTime);
-
-        // Debug.Log($"CurrentTime: {CurrentTime}");
     }
-
 }

@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 9099263927684070704, guid: b65cec9005dff804b851741c61c56e7f, type: 3}
+  waitsForClickBeforeMoving: 1
