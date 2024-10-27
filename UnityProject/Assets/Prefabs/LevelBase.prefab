@@ -222,7 +222,7 @@ MonoBehaviour:
     justo quam, sit amet cursus est euismod ut. Fusce in velit lacinia, ornare est
     vitae, gravida erat.
   textMeshPro: {fileID: 914190796550842368}
-  characterInterval: 0.01
+  characterInterval: 0.02
   delay: 0
 --- !u!1 &1153907162465548900
 GameObject:
@@ -1073,8 +1073,8 @@ MonoBehaviour:
   textToShow: "My dear father, I miss you so much these days, and I don\u2019t know
     which way to go.\r\nI know it\u2019s not possible, but I wish you were here to
     show me the way."
-  textMeshPro: {fileID: 0}
-  characterInterval: 0.01
+  textMeshPro: {fileID: 2075294868536157112}
+  characterInterval: 0.02
   delay: 0
 --- !u!1 &8275591642930777383
 GameObject:
@@ -1340,6 +1340,17 @@ PrefabInstance:
 --- !u!114 &914190796550842368 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3292442954626381799, guid: d6d20bf20b4736a4a89ced9e72cc57c8, type: 3}
+  m_PrefabInstance: {fileID: 2386556799607513063}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2075294868536157112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4454672956717530207, guid: d6d20bf20b4736a4a89ced9e72cc57c8, type: 3}
   m_PrefabInstance: {fileID: 2386556799607513063}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
