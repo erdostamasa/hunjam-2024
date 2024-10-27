@@ -251,6 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a09e05280bf2b246835a1909885518e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitForClickBeforeMoving: 1
+  canMove: 0
   moveSpeed: 2
   groundRaycast1: {fileID: 6106458615553052827}
   groundRaycast2: {fileID: 906023927608997118}
@@ -259,7 +261,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   minTimeBetweenTurns: 0.5
-  animator: {fileID: 7566019371674009198}
+  animator: {fileID: 5651861034921271433}
   maxVerticalSpeed: 4
   maxHorizontalSpeed: 4
 --- !u!114 &8571173572372293863
