@@ -223,6 +223,7 @@ MonoBehaviour:
     vitae, gravida erat.
   textMeshPro: {fileID: 914190796550842368}
   characterInterval: 0.01
+  delay: 0
 --- !u!1 &1153907162465548900
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,6 +869,7 @@ Transform:
   - {fileID: 3975856666816927245}
   - {fileID: 1783850513127690570}
   - {fileID: 6004322437816697329}
+  - {fileID: 4878483551970351912}
   - {fileID: 1142052960483675299}
   - {fileID: 131855249564587084}
   - {fileID: 7659489244047440893}
@@ -1024,6 +1026,56 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6872055034310625849}
   m_Enabled: 1
+--- !u!1 &7385623437878290982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4878483551970351912}
+  - component: {fileID: 7722882689662987898}
+  m_Layer: 0
+  m_Name: TextShower daughter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4878483551970351912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385623437878290982}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.6045381, y: -0.4605849, z: 0.98842967}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7745430207814100250}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7722882689662987898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385623437878290982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7215f33692e61c94ba51b0fa19d85938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToShow: "My dear father, I miss you so much these days, and I don\u2019t know
+    which way to go.\r\nI know it\u2019s not possible, but I wish you were here to
+    show me the way."
+  textMeshPro: {fileID: 0}
+  characterInterval: 0.01
+  delay: 0
 --- !u!1 &8275591642930777383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,10 +1327,6 @@ PrefabInstance:
     - target: {fileID: 3292442954626381799, guid: d6d20bf20b4736a4a89ced9e72cc57c8, type: 3}
       propertyPath: m_isRightToLeft
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3292442954626381799, guid: d6d20bf20b4736a4a89ced9e72cc57c8, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5430909183824603892, guid: d6d20bf20b4736a4a89ced9e72cc57c8, type: 3}
       propertyPath: m_Name

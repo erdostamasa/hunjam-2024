@@ -10,6 +10,8 @@ public class TextShower : MonoBehaviour
 
     [SerializeField] private float characterInterval = 0.04f;
 
+    [SerializeField] private float delay = 0f;
+
     // Setter for the text to show
     public string TextToShow
     {
@@ -30,6 +32,9 @@ public class TextShower : MonoBehaviour
     private IEnumerator UpdateTextCoroutine()
     {
         textMeshPro.text = "";
+
+        yield return new WaitForSeconds(delay);
+        
         foreach (var c in textToShow.ToCharArray())
         {
             textMeshPro.text += c;
