@@ -27,6 +27,7 @@ public class MoveController : MonoBehaviour
 
     void Start()
     {
+        animator.SetBool("Grounded", true);
         rb = GetComponent<Rigidbody2D>();
 
         if (!waitForClickBeforeMoving)
@@ -76,9 +77,11 @@ public class MoveController : MonoBehaviour
         if (!Physics2D.Raycast(groundRaycast1.position, Vector2.down, groundCheckDistance, groundMask) &&
             !Physics2D.Raycast(groundRaycast2.position, Vector2.down, groundCheckDistance, groundMask))
         {
-            // we are not on the ground, don't move
+            animator.SetBool("Grounded", false);
             return;
         }
+
+        animator.SetBool("Grounded", true);
 
         // Calculate the difference between the target speed and the current velocity
         // float velocityDifference = moveSpeed - Math.Abs(rb.linearVelocity.x);
