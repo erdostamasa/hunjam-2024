@@ -93,14 +93,22 @@ public class MenuManager : MonoBehaviour
     {
         if (!MainPanel.activeSelf)
         {
-            Paused = true;
-            PausePanel.SetActive(true);
-            Time.timeScale = 0.0f;
+            Paused = !Paused;
+            PausePanel.SetActive(Paused);
+            Time.timeScale = Paused ? 0.0f : 1.0f;
+            
+            // Release cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
     public void ResumeGame()
     {
+        // Release cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         Paused = false;
         Time.timeScale = 1f;
         PausePanel.SetActive(false);
@@ -108,6 +116,10 @@ public class MenuManager : MonoBehaviour
 
     public void ExitToMenu()
     {
+        // Release cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         MainPanel.SetActive(true);
         Paused = false;
         Time.timeScale = 1f;
@@ -116,6 +128,10 @@ public class MenuManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        // Release cursor
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PausePanel.SetActive(false);
         Paused = false;
